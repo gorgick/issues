@@ -14,6 +14,15 @@ def ele_mul(number, vector):
     return output
 
 
+def vect_mat_mul(vect, matrix):
+    assert (len(vect) == len(matrix))
+    output = [0, 0, 0]
+    for i in range(len(vect)):
+        output[i] += w_sum(vect, matrix[i])
+    return output
+
+
+
 def neural_network(input, weight):
     prediction = w_sum(input, weight)
     return prediction
