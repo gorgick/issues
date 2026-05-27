@@ -1,11 +1,11 @@
 import numpy as np
 
-weights = np.array([0.1, 0.2, 0])
+# weights = np.array([0.1, 0.2, 0])
 
 
-def neural_network(input, weight):
-    pred = input.dot(weight)
-    return pred
+# def neural_network(input, weight):
+#     pred = input.dot(weight)
+#     return pred
 
 
 toes = np.array([8.5, 9.5, 9.9, 9.0])
@@ -17,7 +17,22 @@ ih_wgt = np.array([[0.1, 0.2, -0.1],  # hid[0]
                    [-0.1, 0.1, 0.9],  # hid[1]
                    [0.1, 0.4, 0.1]]).T  # hid[2]
 
+# hid[0] hid[1] hid[2]
+hp_wgt = np.array([[0.3, 1.1, -0.3],  # травмы?
+                   [0.1, 0.2, 0.0],  # победы?
+                   [0.0, 1.3, 0.1]]).T  # печаль?
+
+weights = [ih_wgt, hp_wgt]
+
+
+def neural_network(input, weights):
+    hid = input.dot(weights[0])
+    pred = hid.dot(weights[1])
+    return pred
+
 input = np.array([toes[0], wlrec[0], nfans[0]])
 pred = neural_network(input, weights)
 
-print(ih_wgt)
+print(weights[0])
+
+print(pred)
