@@ -22,7 +22,6 @@ def vect_mat_mul(vect, matrix):
     return output
 
 
-
 def neural_network(input, weight):
     prediction = w_sum(input, weight)
     return prediction

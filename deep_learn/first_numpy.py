@@ -2,6 +2,10 @@ import numpy as np
 
 # weights = np.array([0.1, 0.2, 0])
 
+d = np.zeros((2, 5))  # Матрица 2x5, заполненная нулями
+w = np.random.rand(2, 4)  # Матрица 2x4, заполненная случайными числами от 0 до 1
+
+
 
 # def neural_network(input, weight):
 #     pred = input.dot(weight)
@@ -29,6 +33,7 @@ def neural_network(input, weights):
     hid = input.dot(weights[0])
     pred = hid.dot(weights[1])
     return pred
+
 
 input = np.array([toes[0], wlrec[0], nfans[0]])
 pred = neural_network(input, weights)
