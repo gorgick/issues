@@ -1,11 +1,14 @@
 import numpy as np
 
 # weights = np.array([0.1, 0.2, 0])
-
+a = np.zeros((1, 4))
+b = np.zeros((4, 3))
 d = np.zeros((2, 5))  # Матрица 2x5, заполненная нулями
 w = np.random.rand(2, 4)  # Матрица 2x4, заполненная случайными числами от 0 до 1
 
-
+"""Число столбцов в матрице слева должно совпадать с числом строк в матрице справа"""
+c = a.dot(b)  # Вектор длиной 4
+print(c)  # Матрица с 4 строками и 3 столбцами
 
 # def neural_network(input, weight):
 #     pred = input.dot(weight)
